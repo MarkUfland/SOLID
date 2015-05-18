@@ -3,6 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Services;
 using Domain;
 using DataAccess;
+using Moq;
+using Moq.AutoMock;
+using Ploeh.AutoFixture;
 
 namespace SOLIDTests
 {
@@ -26,6 +29,32 @@ namespace SOLIDTests
             var expectedamount = transferservice.GetAmount(service, amount);
 
             Assert.IsTrue(serviceFactory.getServiceMethodWasCalled);
+        }
+
+        [TestMethod]
+        [TestCategory("SIDService")]
+        public void Then_The_GetService_Method_Of_The_Service_Factory_Was_Called2()
+        {
+
+            var mocker = new AutoMocker();
+            var fixture = new Fixture();
+
+            mocker.Use<IDataContext>(o => o.GetById<FXData>(It.IsAny<object>()) == new FXData());
+            mocker.Use<IService>(o =>o.CalculateAmount(It.IsAny<decimal>()) == 10.0m);
+            var serv = mocker.GetMock<IService>();
+
+            mocker.Use<IServiceFactory>(o => o.GetService(It.IsAny<string>()) == serv.Object);
+
+            var transferService = mocker.CreateInstance<TransferService>();
+
+            var service = fixture.Create<string>();
+            var amount = fixture.Create<decimal>();
+
+            var expectedamount = transferService.GetAmount(service, amount);
+
+            var factory = mocker.GetMock<IServiceFactory>();
+
+            factory.Verify(f => f.GetService(It.IsAny<String>()), Times.Once());
         }
     }
 
