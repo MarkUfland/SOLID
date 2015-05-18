@@ -91,6 +91,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Presenters\Presenters.csproj">
+      <Project>{4dfad1c8-f2d5-494a-978c-121c821ae892}</Project>
+      <Name>Presenters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{aee80045-cbd9-4f99-9f62-4e2d9249968e}</Project>
       <Name>Services</Name>

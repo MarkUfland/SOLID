@@ -40,56 +40,63 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 119);
+            this.label3.Location = new System.Drawing.Point(48, 231);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 17);
+            this.label3.Size = new System.Drawing.Size(200, 32);
             this.label3.TabIndex = 26;
             this.label3.Text = "Actual Amount";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 75);
+            this.label2.Location = new System.Drawing.Point(48, 145);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(113, 32);
             this.label2.TabIndex = 25;
             this.label2.Text = "Amount";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 31);
+            this.label1.Location = new System.Drawing.Point(42, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(110, 32);
             this.label1.TabIndex = 24;
             this.label1.Text = "Service";
             // 
             // ActualAmountTextBox
             // 
-            this.ActualAmountTextBox.Location = new System.Drawing.Point(158, 115);
+            this.ActualAmountTextBox.Location = new System.Drawing.Point(316, 223);
+            this.ActualAmountTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ActualAmountTextBox.Name = "ActualAmountTextBox";
-            this.ActualAmountTextBox.Size = new System.Drawing.Size(100, 22);
+            this.ActualAmountTextBox.Size = new System.Drawing.Size(196, 38);
             this.ActualAmountTextBox.TabIndex = 23;
             // 
             // AmountTextBox
             // 
-            this.AmountTextBox.Location = new System.Drawing.Point(161, 71);
+            this.AmountTextBox.Location = new System.Drawing.Point(322, 138);
+            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.AmountTextBox.Name = "AmountTextBox";
-            this.AmountTextBox.Size = new System.Drawing.Size(100, 22);
+            this.AmountTextBox.Size = new System.Drawing.Size(196, 38);
             this.AmountTextBox.TabIndex = 22;
             // 
             // ServiceTextBox
             // 
-            this.ServiceTextBox.Location = new System.Drawing.Point(161, 31);
+            this.ServiceTextBox.Location = new System.Drawing.Point(322, 60);
+            this.ServiceTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ServiceTextBox.Name = "ServiceTextBox";
-            this.ServiceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.ServiceTextBox.Size = new System.Drawing.Size(196, 38);
             this.ServiceTextBox.TabIndex = 21;
             // 
             // TransferButton
             // 
-            this.TransferButton.Location = new System.Drawing.Point(155, 178);
+            this.TransferButton.Location = new System.Drawing.Point(310, 345);
+            this.TransferButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TransferButton.Name = "TransferButton";
-            this.TransferButton.Size = new System.Drawing.Size(106, 45);
+            this.TransferButton.Size = new System.Drawing.Size(212, 87);
             this.TransferButton.TabIndex = 20;
             this.TransferButton.Text = "Transfer";
             this.TransferButton.UseVisualStyleBackColor = true;
@@ -97,9 +104,9 @@
             // 
             // SOLIDForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 255);
+            this.ClientSize = new System.Drawing.Size(616, 494);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -107,8 +114,10 @@
             this.Controls.Add(this.AmountTextBox);
             this.Controls.Add(this.ServiceTextBox);
             this.Controls.Add(this.TransferButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "SOLIDForm";
             this.Text = "SOLIDForm";
+            this.Load += new System.EventHandler(this.SOLIDForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
