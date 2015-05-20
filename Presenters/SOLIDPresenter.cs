@@ -13,19 +13,20 @@ namespace Presenters
         private ITransferService transferService;
 
 
-        public SOLIDPresenter(ISOLIDView view): this (view, new TransferService())
-        {
+        //public SOLIDPresenter(ISOLIDView view): this (view, new TransferService())
+        //{
             
-        }
+        //}
 
-        public SOLIDPresenter(ISOLIDView view, ITransferService transferService)
+        public SOLIDPresenter(ITransferService transferService)
         {
-            this.view = view;
             this.transferService = transferService;
         }
 
-        public SOLIDVM Initialise()
+        public SOLIDVM Initialise(ISOLIDView view)
         {
+            this.view = view;
+
             return new SOLIDVM();
         }
 

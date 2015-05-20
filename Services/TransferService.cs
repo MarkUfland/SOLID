@@ -19,10 +19,10 @@ namespace Services
             this.dataContext = dataContext;
         }
 
-        public TransferService() : this(new ServiceFactory(), new DataContext())
-        {
+        //public TransferService() : this(new ServiceFactory(), new DataContext())
+        //{
 
-        }
+        //}
 
         private decimal actualAmount;
 

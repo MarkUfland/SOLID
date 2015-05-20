@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public interface IDataRepository<T>
+    public interface IDataRepository
+    {
+
+    }
+
+    public interface IDataRepository<T> : IDataRepository
     {
         /// <summary>
         /// Adds the given item to the database

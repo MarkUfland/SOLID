@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenters", "Presenters\Presenters.csproj", "{4DFAD1C8-F2D5-494A-978C-121C821AE892}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC", "IOC\IOC.csproj", "{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,16 @@ Global
 		{4DFAD1C8-F2D5-494A-978C-121C821AE892}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4DFAD1C8-F2D5-494A-978C-121C821AE892}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4DFAD1C8-F2D5-494A-978C-121C821AE892}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +117,6 @@ Global
 		{C81C875D-4091-4D61-8C83-9DBD1332EF3F} = {A1313A40-076A-4289-AC6C-9F70B3365082}
 		{260DAA41-8E68-4868-9CB5-8F6E766E9E5B} = {A492C3EA-9FA7-49A4-8657-7E3BDFA8FF4B}
 		{4DFAD1C8-F2D5-494A-978C-121C821AE892} = {660E2496-0AD0-46F7-BF59-33DF0296AA51}
+		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0} = {8E0D1C45-C1DD-47A0-8FDB-AC8C291BFAC6}
 	EndGlobalSection
 EndGlobal

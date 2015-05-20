@@ -1,5 +1,4 @@
-﻿using Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,25 +12,22 @@ namespace SOLID
 {
     public partial class SOLIDForm : Form, ISOLIDView
     {
-        private ITransferService transferService;
         private SOLIDPresenter presenter;
         private SOLIDVM vm;
 
-        public SOLIDForm(ITransferService transferService)
+        public SOLIDForm(SOLIDPresenter presenter)
         {
             InitializeComponent();
 
-            this.presenter = new SOLIDPresenter(this);
+            this.presenter = presenter;
 
-            this.vm= this.presenter.Initialise();
-
-            this.transferService = transferService;
+            this.vm= this.presenter.Initialise(this);
         }
 
-        public SOLIDForm() : this(new TransferService())
-        {
+        //public SOLIDForm() : this(new TransferService())
+        //{
 
-        }
+        //}
 
         private void TransferButton_Click(object sender, EventArgs e)
         {

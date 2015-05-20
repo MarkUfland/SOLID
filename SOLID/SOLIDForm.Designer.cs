@@ -70,7 +70,7 @@
             // ActualAmountTextBox
             // 
             this.ActualAmountTextBox.Location = new System.Drawing.Point(316, 223);
-            this.ActualAmountTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ActualAmountTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ActualAmountTextBox.Name = "ActualAmountTextBox";
             this.ActualAmountTextBox.Size = new System.Drawing.Size(196, 38);
             this.ActualAmountTextBox.TabIndex = 23;
@@ -78,7 +78,7 @@
             // AmountTextBox
             // 
             this.AmountTextBox.Location = new System.Drawing.Point(322, 138);
-            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AmountTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(196, 38);
             this.AmountTextBox.TabIndex = 22;
@@ -86,15 +86,15 @@
             // ServiceTextBox
             // 
             this.ServiceTextBox.Location = new System.Drawing.Point(322, 60);
-            this.ServiceTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ServiceTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ServiceTextBox.Name = "ServiceTextBox";
             this.ServiceTextBox.Size = new System.Drawing.Size(196, 38);
             this.ServiceTextBox.TabIndex = 21;
             // 
             // TransferButton
             // 
-            this.TransferButton.Location = new System.Drawing.Point(310, 345);
-            this.TransferButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TransferButton.Location = new System.Drawing.Point(316, 345);
+            this.TransferButton.Margin = new System.Windows.Forms.Padding(6);
             this.TransferButton.Name = "TransferButton";
             this.TransferButton.Size = new System.Drawing.Size(212, 87);
             this.TransferButton.TabIndex = 20;
@@ -114,7 +114,7 @@
             this.Controls.Add(this.AmountTextBox);
             this.Controls.Add(this.ServiceTextBox);
             this.Controls.Add(this.TransferButton);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "SOLIDForm";
             this.Text = "SOLIDForm";
             this.Load += new System.EventHandler(this.SOLIDForm_Load);
