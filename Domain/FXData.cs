@@ -8,7 +8,8 @@ namespace Domain
 {
     public class FXData
     {
-        public DateTime FXDate { get; set; }
-        public decimal FXRate { get; set; }
+        public virtual int Id { get; set; }
+        public virtual DateTime FXDate { get; set; }
+        public virtual decimal FXRate { get; set; }
     }
 }

@@ -41,13 +41,13 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="FXDataRepository.cs" />
-    <Compile Include="IDataContext.cs" />
-    <Compile Include="IDataRepository.cs" />
-    <Compile Include="IRepositoryFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryTypes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessInterfaces\DataAccessInterfaces.csproj">
+      <Project>{30683728-7b6c-47dc-9c72-18e096056653}</Project>
+      <Name>DataAccessInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{c81c875d-4091-4d61-8c83-9dbd1332ef3f}</Project>
       <Name>Domain</Name>

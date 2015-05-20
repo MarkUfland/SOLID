@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DataAccess;
 using Domain;
 using Ninject.Modules;
+using DataAccessInterfaces;
 
 namespace IOC
 {

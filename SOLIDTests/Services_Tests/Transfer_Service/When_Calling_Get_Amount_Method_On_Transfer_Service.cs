@@ -6,6 +6,7 @@ using DataAccess;
 using Moq;
 using Moq.AutoMock;
 using Ploeh.AutoFixture;
+using DataAccessInterfaces;
 
 namespace SOLIDTests
 {
@@ -114,6 +115,86 @@ namespace SOLIDTests
         }
 
         public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        bool IDataContext.IsDirty
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        bool IDataContext.IsInTransaction
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        System.Collections.Generic.IList<T> IDataContext.GetAll<T>()
+        {
+            throw new NotImplementedException();
+        }
+
+        System.Collections.Generic.IList<T> IDataContext.GetAll<T>(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        System.Collections.Generic.IList<T> IDataContext.GetByCriteria<T>(Query query)
+        {
+            throw new NotImplementedException();
+        }
+
+        System.Collections.Generic.IList<T> IDataContext.GetByCriteria<T>(Query query, int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        T IDataContext.GetById<T>(object id)
+        {
+            throw new NotImplementedException();
+        }
+
+        int IDataContext.GetCount<T>()
+        {
+            throw new NotImplementedException();
+        }
+
+        int IDataContext.GetCount<T>(Query query)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDataContext.Add(object item)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDataContext.Delete(object item)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDataContext.Save(object item)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDataContext.BeginTransaction()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDataContext.Commit()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDataContext.Rollback()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDisposable.Dispose()
         {
             throw new NotImplementedException();
         }

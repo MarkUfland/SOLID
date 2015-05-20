@@ -44,6 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessInterfaces\DataAccessInterfaces.csproj">
+      <Project>{30683728-7b6c-47dc-9c72-18e096056653}</Project>
+      <Name>DataAccessInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{260daa41-8e68-4868-9cb5-8f6e766e9e5b}</Project>
       <Name>DataAccess</Name>
