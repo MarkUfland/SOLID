@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.AmountTextBox = new System.Windows.Forms.TextBox();
             this.ServiceTextBox = new System.Windows.Forms.TextBox();
             this.TransferButton = new System.Windows.Forms.Button();
+            this.sOLIDVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.sOLIDVMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -69,14 +72,17 @@
             // 
             // ActualAmountTextBox
             // 
+            this.ActualAmountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sOLIDVMBindingSource, "TransferedAmount", true));
             this.ActualAmountTextBox.Location = new System.Drawing.Point(316, 223);
             this.ActualAmountTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ActualAmountTextBox.Name = "ActualAmountTextBox";
             this.ActualAmountTextBox.Size = new System.Drawing.Size(196, 38);
             this.ActualAmountTextBox.TabIndex = 23;
+            this.ActualAmountTextBox.TextChanged += new System.EventHandler(this.ActualAmountTextBox_TextChanged);
             // 
             // AmountTextBox
             // 
+            this.AmountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sOLIDVMBindingSource, "Amount", true));
             this.AmountTextBox.Location = new System.Drawing.Point(322, 138);
             this.AmountTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.AmountTextBox.Name = "AmountTextBox";
@@ -85,6 +91,7 @@
             // 
             // ServiceTextBox
             // 
+            this.ServiceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sOLIDVMBindingSource, "Service", true));
             this.ServiceTextBox.Location = new System.Drawing.Point(322, 60);
             this.ServiceTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.ServiceTextBox.Name = "ServiceTextBox";
@@ -102,6 +109,10 @@
             this.TransferButton.UseVisualStyleBackColor = true;
             this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
             // 
+            // sOLIDVMBindingSource
+            // 
+            this.sOLIDVMBindingSource.DataSource = typeof(Presenters.SOLIDVM);
+            // 
             // SOLIDForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -118,6 +129,7 @@
             this.Name = "SOLIDForm";
             this.Text = "SOLIDForm";
             this.Load += new System.EventHandler(this.SOLIDForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.sOLIDVMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +144,6 @@
         private System.Windows.Forms.TextBox AmountTextBox;
         private System.Windows.Forms.TextBox ServiceTextBox;
         private System.Windows.Forms.Button TransferButton;
+        private System.Windows.Forms.BindingSource sOLIDVMBindingSource;
     }
 }

@@ -17,11 +17,14 @@ namespace SOLID
 
         public SOLIDForm(SOLIDPresenter presenter)
         {
+            
+
             InitializeComponent();
 
             this.presenter = presenter;
 
-            this.vm= this.presenter.Initialise(this);
+            this.vm = this.presenter.Initialise(this);  
+
         }
 
         //public SOLIDForm() : this(new TransferService())
@@ -31,8 +34,8 @@ namespace SOLID
 
         private void TransferButton_Click(object sender, EventArgs e)
         {
-            this.vm.Service = ServiceTextBox.Text.ToUpper();
-            this.vm.Amount = decimal.Parse(AmountTextBox.Text);
+            //this.vm.Service = ServiceTextBox.Text.ToUpper();
+            //this.vm.Amount = decimal.Parse(AmountTextBox.Text);
             this.presenter.CalculateTransfer(vm);
         }
 
@@ -40,12 +43,19 @@ namespace SOLID
         {
             this.vm = vm;
 
-            ActualAmountTextBox.Text = vm.TransferedAmount.ToString();
+            this.sOLIDVMBindingSource.ResetBindings(false);
+
+            //ActualAmountTextBox.Text = vm.TransferedAmount.ToString();
         }
 
         private void SOLIDForm_Load(object sender, EventArgs e)
         {
+            this.sOLIDVMBindingSource.DataSource = this.vm;
+        }
 
+        private void ActualAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
