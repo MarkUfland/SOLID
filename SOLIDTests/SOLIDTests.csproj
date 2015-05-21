@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Data_Tests\UnitTest1.cs" />
     <Compile Include="Domain_Tests\SIDService_Tests\When_Calling_Calculate_Transfer_Method_On_SID_Class.cs" />
+    <Compile Include="Logging_Tests\When_a_Message_Is_Logged.cs" />
     <Compile Include="Services_Tests\Transfer_Service\When_Calling_Get_Amount_Method_On_Transfer_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{c81c875d-4091-4d61-8c83-9dbd1332ef3f}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{a5566333-caba-487d-93b9-fe4b9ed2e71a}</Project>
+      <Name>Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\NHDataAccess\NHDataAccess.csproj">
       <Project>{84e072b1-0a39-43b5-b66a-5da2d6fa59cc}</Project>

@@ -34,8 +34,7 @@ namespace SOLID
 
         private void TransferButton_Click(object sender, EventArgs e)
         {
-            //this.vm.Service = ServiceTextBox.Text.ToUpper();
-            //this.vm.Amount = decimal.Parse(AmountTextBox.Text);
+      
             this.presenter.CalculateTransfer(vm);
         }
 
@@ -45,7 +44,6 @@ namespace SOLID
 
             this.sOLIDVMBindingSource.ResetBindings(false);
 
-            //ActualAmountTextBox.Text = vm.TransferedAmount.ToString();
         }
 
         private void SOLIDForm_Load(object sender, EventArgs e)

@@ -55,6 +55,7 @@
     <Compile Include="IOCDomainModule.cs" />
     <Compile Include="IOCPresentationModule.cs" />
     <Compile Include="IOCServicesModule.cs" />
+    <Compile Include="IOCLoggingModule.cs" />
     <Compile Include="NameInstanceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +71,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{c81c875d-4091-4d61-8c83-9dbd1332ef3f}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{a5566333-caba-487d-93b9-fe4b9ed2e71a}</Project>
+      <Name>Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\Presenters\Presenters.csproj">
       <Project>{4dfad1c8-f2d5-494a-978c-121c821ae892}</Project>

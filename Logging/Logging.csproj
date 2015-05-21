@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AEE80045-CBD9-4F99-9F62-4E2D9249968E}</ProjectGuid>
+    <ProjectGuid>{A5566333-CABA-487D-93B9-FE4B9ED2E71A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Services</RootNamespace>
-    <AssemblyName>Services</AssemblyName>
+    <RootNamespace>Logging</RootNamespace>
+    <AssemblyName>Logging</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,27 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITransferService.cs" />
-    <Compile Include="TransferService.cs" />
+    <Compile Include="LogCommand.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="LoggingCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccessInterfaces\DataAccessInterfaces.csproj">
-      <Project>{30683728-7b6c-47dc-9c72-18e096056653}</Project>
-      <Name>DataAccessInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{260daa41-8e68-4868-9cb5-8f6e766e9e5b}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{c81c875d-4091-4d61-8c83-9dbd1332ef3f}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logging\Logging.csproj">
-      <Project>{a5566333-caba-487d-93b9-fe4b9ed2e71a}</Project>
-      <Name>Logging</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessInterfaces", "Dat
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SOLID2", "SOLID2\SOLID2.sqlproj", "{7A0E9B02-CBDF-4D74-93DD-5804B6314C4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{A5566333-CABA-487D-93B9-FE4B9ED2E71A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,6 +148,16 @@ Global
 		{7A0E9B02-CBDF-4D74-93DD-5804B6314C4C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7A0E9B02-CBDF-4D74-93DD-5804B6314C4C}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{7A0E9B02-CBDF-4D74-93DD-5804B6314C4C}.Release|x86.ActiveCfg = Release|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +171,6 @@ Global
 		{F5C53BF5-EA8C-41AF-A7C3-DEEDE22FA0A0} = {8E0D1C45-C1DD-47A0-8FDB-AC8C291BFAC6}
 		{84E072B1-0A39-43B5-B66A-5DA2D6FA59CC} = {A492C3EA-9FA7-49A4-8657-7E3BDFA8FF4B}
 		{30683728-7B6C-47DC-9C72-18E096056653} = {A492C3EA-9FA7-49A4-8657-7E3BDFA8FF4B}
+		{A5566333-CABA-487D-93B9-FE4B9ED2E71A} = {8E0D1C45-C1DD-47A0-8FDB-AC8C291BFAC6}
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using DataAccessInterfaces;
+using Logging;
 
 namespace Services
 {
@@ -13,11 +14,13 @@ namespace Services
     {
         private IServiceFactory serviceFactory;
         private IDataContext dataContext;
+        private ILogger logger;
 
-        public TransferService(IServiceFactory serviceFactory, IDataContext dataContext)
+        public TransferService(IServiceFactory serviceFactory, IDataContext dataContext, ILogger logger)
         {
             this.serviceFactory = serviceFactory;
             this.dataContext = dataContext;
+            this.logger = logger;
         }
 
         //public TransferService() : this(new ServiceFactory(), new DataContext())
@@ -51,7 +54,12 @@ namespace Services
 
             actualAmount = actualAmount * fxData.FXRate;
 
-            // Log errrors
+            // Log transfer amount
+            logger.Log( new LogCommand() 
+            {
+                LoggingCategory = LoggingCategory.Information,
+                Message = string.Format( "Transfered {0}", actualAmount.ToString() )
+            } );      
 
             //Write to database
 

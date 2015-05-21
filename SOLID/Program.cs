@@ -20,6 +20,7 @@ namespace SOLID
             kernel.Load<IOCDomainModule>();
             kernel.Load<IOCServicesModule>();
             kernel.Load<IOCPresentationModule>();
+            kernel.Load<IOCLoggingModule>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

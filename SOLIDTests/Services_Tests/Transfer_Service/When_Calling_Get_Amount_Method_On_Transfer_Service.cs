@@ -7,6 +7,7 @@ using Moq;
 using Moq.AutoMock;
 using Ploeh.AutoFixture;
 using DataAccessInterfaces;
+using Logging;
 
 namespace SOLIDTests
 {
@@ -25,7 +26,9 @@ namespace SOLIDTests
 
             var dataContext = new FakeDataContext();
 
-            var transferservice=new TransferService(serviceFactory,dataContext);
+            var logger = new FakeLogger();
+
+            var transferservice=new TransferService(serviceFactory,dataContext,logger);
 
             var expectedamount = transferservice.GetAmount(service, amount);
 
@@ -56,6 +59,32 @@ namespace SOLIDTests
             var factory = mocker.GetMock<IServiceFactory>();
 
             factory.Verify(f => f.GetService(It.IsAny<String>()), Times.Once());
+        }
+
+        [TestMethod]
+        [TestCategory("SIDService")]
+        public void Then_The_Log_Method_Of_The_Logger_Was_Called()
+        {
+            var mocker = new AutoMocker();
+            var fixture = new Fixture();
+
+            mocker.Use<IDataContext>(o => o.GetById<FXData>(It.IsAny<object>()) == new FXData());
+            mocker.Use<IService>(o => o.CalculateAmount(It.IsAny<decimal>()) == 10.0m);
+            mocker.Use<ILogger>(o => o.Log(It.IsAny<LogCommand>()) == true );
+            var serv = mocker.GetMock<IService>();
+
+            mocker.Use<IServiceFactory>(o => o.GetService(It.IsAny<string>()) == serv.Object);
+
+            var transferService = mocker.CreateInstance<TransferService>();
+
+            var service = fixture.Create<string>();
+            var amount = fixture.Create<decimal>();
+
+            var expectedamount = transferService.GetAmount(service, amount);
+
+            var logger = mocker.GetMock<ILogger>();
+
+            logger.Verify( l => l.Log(It.IsAny<LogCommand>()), Times.Once());
         }
     }
 
@@ -234,6 +263,18 @@ namespace SOLIDTests
         }
     }
 
+    public class FakeLogger : ILogger
+    {
+        public bool HasLogged { get; set; }
+        public bool Log(LogCommand logCommand)
+        {
+            HasLogged = true;
+            
+            return true;
+        }
+    }
+
+
 }
 
-   
+
