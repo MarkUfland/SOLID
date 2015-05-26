@@ -40,7 +40,6 @@ namespace SOLIDTests
         [TestCategory("SIDService")]
         public void Then_The_GetService_Method_Of_The_Service_Factory_Was_Called2()
         {
-
             var mocker = new AutoMocker();
             var fixture = new Fixture();
 

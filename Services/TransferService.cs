@@ -30,14 +30,15 @@ namespace Services
 
         private decimal actualAmount;
 
+        public ServiceCommand ServiceCommand { get; set; }
+
         public decimal GetAmount(ServiceCommand serviceCommand)
         {
-            
             var fxData = this.dataContext.GetById<FXData>(1);
 
-            actualAmount = serviceFactory.GetService(serviceCommand.Service).CalculateAmount(serviceCommand.Amount);
-
-            actualAmount = actualAmount * fxData.FXRate;
+            ServiceCommand = serviceCommand;
+            actualAmount   = serviceFactory.GetService(serviceCommand.Service).CalculateAmount(serviceCommand.Amount);
+            actualAmount   = actualAmount * fxData.FXRate;
 
             // Log transfer amount
             logger.Log( new LogCommand() 
