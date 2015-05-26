@@ -18,8 +18,9 @@ namespace SOLIDTests
         [TestCategory("SIDService")]
         public void Then_The_GetService_Method_Of_The_Service_Factory_Was_Called()
         {
-           var service = "SID";
+            var service = "SID";
             var amount = 10000.0m;
+            var serviceCommand = new ServiceCommand() { Service = service, Amount = amount };
 
             var serviceFactory = new FakeServiceFactory();
             //var repository = new FakeRepository();
@@ -30,7 +31,7 @@ namespace SOLIDTests
 
             var transferservice=new TransferService(serviceFactory,dataContext,logger);
 
-            var expectedamount = transferservice.GetAmount(service, amount);
+            var expectedamount = transferservice.GetAmount(serviceCommand);
 
             Assert.IsTrue(serviceFactory.getServiceMethodWasCalled);
         }
@@ -51,10 +52,9 @@ namespace SOLIDTests
 
             var transferService = mocker.CreateInstance<TransferService>();
 
-            var service = fixture.Create<string>();
-            var amount = fixture.Create<decimal>();
+            var serviceCommand = fixture.Create<ServiceCommand>();
 
-            var expectedamount = transferService.GetAmount(service, amount);
+            var expectedamount = transferService.GetAmount(serviceCommand);
 
             var factory = mocker.GetMock<IServiceFactory>();
 
@@ -77,10 +77,8 @@ namespace SOLIDTests
 
             var transferService = mocker.CreateInstance<TransferService>();
 
-            var service = fixture.Create<string>();
-            var amount = fixture.Create<decimal>();
-
-            var expectedamount = transferService.GetAmount(service, amount);
+            var serviceCommand = fixture.Create<ServiceCommand>();
+            var expectedamount = transferService.GetAmount(serviceCommand);
 
             var logger = mocker.GetMock<ILogger>();
 

@@ -30,27 +30,12 @@ namespace Services
 
         private decimal actualAmount;
 
-        public decimal GetAmount(string service, decimal amount)
+        public decimal GetAmount(ServiceCommand serviceCommand)
         {
-            //Get some data from database
-
-            //Calculate values
-            //if (service == "AGMO")
-            //{
-            //    actualAmount = amount * 0.8m;
-            //}
-            //else if (service == "IDEAL")
-            //{
-            //    actualAmount = amount * 0.7m;
-            //}
-            //else if (service == "SID")
-            //{
-            //    actualAmount = amount * 0.6m;
-            //}
-
+            
             var fxData = this.dataContext.GetById<FXData>(1);
 
-            actualAmount = serviceFactory.GetService(service).CalculateAmount(amount);
+            actualAmount = serviceFactory.GetService(serviceCommand.Service).CalculateAmount(serviceCommand.Amount);
 
             actualAmount = actualAmount * fxData.FXRate;
 

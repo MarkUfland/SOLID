@@ -1,4 +1,6 @@
-﻿using Services;
+﻿using AutoMapper;
+using Domain;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +34,9 @@ namespace Presenters
 
         public void CalculateTransfer(SOLIDVM vm)
         {
-            vm.TransferedAmount = transferService.GetAmount(vm.Service, vm.Amount);
+            var serviceCommand = Mapper.Map<SOLIDVM, ServiceCommand>(vm);
+
+            vm.TransferedAmount = transferService.GetAmount(serviceCommand);
 
             this.view.UpdateTransferAmount(vm);
         }

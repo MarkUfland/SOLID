@@ -43,6 +43,7 @@
     <Compile Include="IdealService.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IServiceFactory.cs" />
+    <Compile Include="ServiceCommand.cs" />
     <Compile Include="ServiceFactory.cs" />
     <Compile Include="SIDService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

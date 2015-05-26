@@ -62,6 +62,7 @@
     <Compile Include="Data_Tests\UnitTest1.cs" />
     <Compile Include="Domain_Tests\SIDService_Tests\When_Calling_Calculate_Transfer_Method_On_SID_Class.cs" />
     <Compile Include="Logging_Tests\When_a_Message_Is_Logged.cs" />
+    <Compile Include="Presenter_Tests\WhenCallingTheCalculateMethod.cs" />
     <Compile Include="Services_Tests\Transfer_Service\When_Calling_Get_Amount_Method_On_Transfer_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +86,10 @@
     <ProjectReference Include="..\NHDataAccess\NHDataAccess.csproj">
       <Project>{84e072b1-0a39-43b5-b66a-5da2d6fa59cc}</Project>
       <Name>NHDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presenters\Presenters.csproj">
+      <Project>{4dfad1c8-f2d5-494a-978c-121c821ae892}</Project>
+      <Name>Presenters</Name>
     </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{aee80045-cbd9-4f99-9f62-4e2d9249968e}</Project>
