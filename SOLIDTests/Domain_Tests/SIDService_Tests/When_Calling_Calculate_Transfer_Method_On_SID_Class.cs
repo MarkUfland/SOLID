@@ -10,11 +10,10 @@ namespace SOLIDTests
         [TestMethod]
         public void Then_6000_Is_Returned()
         {
-            var amount = 10000.0m;
+            var serviceCommand = new ServiceCommand() { Amount = 10000.0m };
+            var sidService     = new SIDService();
 
-            var sidService = new SIDService();
-
-            var expectedAmount = sidService.CalculateAmount(amount);
+            var expectedAmount = sidService.CalculateAmount(serviceCommand);
 
             Assert.AreEqual(6000, expectedAmount);
         }

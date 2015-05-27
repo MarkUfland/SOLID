@@ -3,6 +3,6 @@ namespace Domain
 {
     public interface IService
     {
-        decimal CalculateAmount(decimal amount);
+        decimal CalculateAmount(ServiceCommand serviceCommand);
     }
 }

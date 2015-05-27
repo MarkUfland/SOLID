@@ -9,9 +9,9 @@ namespace Domain
     public class SIDService : IService
     {
 
-        public decimal CalculateAmount(decimal amount)
+        public decimal CalculateAmount(ServiceCommand serviceCommand)
         {
-            return amount * 0.6m;
+            return serviceCommand.Amount * 0.6m;
         }
     }
 }

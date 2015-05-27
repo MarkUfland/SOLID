@@ -8,7 +8,7 @@ namespace Domain
 {
     public class IdealService : IService
     {
-        public decimal CalculateAmount(decimal amount)
+        public decimal CalculateAmount(ServiceCommand serviceCommand)
         {
             //if (AGE < 20)
             //    return TO YOUNG
@@ -19,7 +19,7 @@ namespace Domain
             //if amount > 5000
             //    uplit 1%
 
-            return amount * 0.7m;
+            return serviceCommand.Amount * 0.7m;
         }
     }
 }

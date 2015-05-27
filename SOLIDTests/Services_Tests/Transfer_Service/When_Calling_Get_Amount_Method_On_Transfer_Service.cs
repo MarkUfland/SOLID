@@ -44,7 +44,7 @@ namespace SOLIDTests
             var fixture = new Fixture();
 
             mocker.Use<IDataContext>(o => o.GetById<FXData>(It.IsAny<object>()) == new FXData());
-            mocker.Use<IService>(o =>o.CalculateAmount(It.IsAny<decimal>()) == 10.0m);
+            mocker.Use<IService>(o =>o.CalculateAmount(It.IsAny<ServiceCommand>()) == 10.0m);
             var serv = mocker.GetMock<IService>();
 
             mocker.Use<IServiceFactory>(o => o.GetService(It.IsAny<string>()) == serv.Object);
@@ -68,7 +68,7 @@ namespace SOLIDTests
             var fixture = new Fixture();
 
             mocker.Use<IDataContext>(o => o.GetById<FXData>(It.IsAny<object>()) == new FXData());
-            mocker.Use<IService>(o => o.CalculateAmount(It.IsAny<decimal>()) == 10.0m);
+            mocker.Use<IService>(o => o.CalculateAmount(It.IsAny<ServiceCommand>()) == 10.0m);
             mocker.Use<ILogger>(o => o.Log(It.IsAny<LogCommand>()) == true );
             var serv = mocker.GetMock<IService>();
 
@@ -101,7 +101,7 @@ namespace SOLIDTests
     public class FakeService : IService
     {
 
-        public decimal CalculateAmount(decimal amount)
+        public decimal CalculateAmount(ServiceCommand serviceCommand)
         {
             return 6000.0m;
         }
@@ -177,7 +177,7 @@ namespace SOLIDTests
 
         T IDataContext.GetById<T>(object id)
         {
-            throw new NotImplementedException();
+            return new FXData() { FXRate = 0.6m } as T;
         }
 
         int IDataContext.GetCount<T>()
