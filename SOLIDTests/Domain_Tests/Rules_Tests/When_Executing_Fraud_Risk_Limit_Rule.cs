@@ -7,28 +7,20 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
     public class When_Executing_Fraud_Risk_Limit_Rule
     {
         [TestMethod]
-        public void Then_Rule_Passed()
+        public void Then_Fraud_Risk_Limit_Rule_Passed()
         {
-            // Arrange
             var fraudRiskLimitRule = new FraudRiskLimitRule();
-            
-            // Act
-            var hasPassed = fraudRiskLimitRule.ExecuteRule( 1000m );
-            
-            // Assert
+            var hasPassed          = fraudRiskLimitRule.ExecuteRule( 1000m );
+          
             Assert.IsTrue(hasPassed);
         }
 
         [TestMethod]
-        public void Then_Rule_Failed()
+        public void Then_Fraud_Risk_Limit_Rule_Failed()
         {
-            // Arrange
             var fraudRiskLimitRule = new FraudRiskLimitRule();
+            var hasPassed          = fraudRiskLimitRule.ExecuteRule( 1000000m );
 
-            // Act
-            var hasPassed = fraudRiskLimitRule.ExecuteRule(1000000m);
-
-            // Assert
             Assert.IsFalse(hasPassed);
         }
     }

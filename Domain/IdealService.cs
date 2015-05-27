@@ -17,7 +17,7 @@ namespace Domain
             //    Send it To risk
 
             //if amount > 5000
-            //    uplit 1%
+            //    uplift 1%
 
             return serviceCommand.Amount * 0.7m;
         }
