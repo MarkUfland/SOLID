@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Domain.Rules;
+using Domain;
 
 namespace SOLIDTests.Domain_Tests.Rules_Tests
 {
@@ -10,7 +12,8 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void Then_Legal_Age_Rule_Passed()
         {
             var legalAgeRule = new LegalAgeRule();
-            var hasPassed    = legalAgeRule.ExecuteRule( 20 );
+            var serviceCommand = new ServiceCommand() { Age = 20 };
+            var hasPassed = legalAgeRule.ExecuteRule(serviceCommand );
 
             Assert.IsTrue(hasPassed);
         }
@@ -19,20 +22,11 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void Then_Legal_Age_Rule_Failed()
         {
             var legalAgeRule = new LegalAgeRule();
-            var hasPassed    = legalAgeRule.ExecuteRule( 19 );
+            var serviceCommand = new ServiceCommand() { Age = 19 };
+            var hasPassed = legalAgeRule.ExecuteRule(serviceCommand);
 
             Assert.IsFalse(hasPassed);
         }
     }
 
-    public class LegalAgeRule
-    {
-        public bool ExecuteRule(decimal age)
-        {
-            var ageLimit  = 20;
-            var hasPassed = age >= ageLimit; 
-            
-            return hasPassed;
-        }
-    }
 }

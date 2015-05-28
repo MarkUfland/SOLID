@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Domain.Rules;
+using Domain;
 
 namespace SOLIDTests.Domain_Tests.Rules_Tests
 {
@@ -10,7 +12,8 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void Then_Fraud_Risk_Limit_Rule_Passed()
         {
             var fraudRiskLimitRule = new FraudRiskLimitRule();
-            var hasPassed          = fraudRiskLimitRule.ExecuteRule( 1000m );
+            var serviceCommand = new ServiceCommand() { Amount = 1000m };
+            var hasPassed = fraudRiskLimitRule.ExecuteRule( serviceCommand );
           
             Assert.IsTrue(hasPassed);
         }
@@ -19,20 +22,12 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void Then_Fraud_Risk_Limit_Rule_Failed()
         {
             var fraudRiskLimitRule = new FraudRiskLimitRule();
-            var hasPassed          = fraudRiskLimitRule.ExecuteRule( 1000000m );
+            var serviceCommand = new ServiceCommand() { Amount = 1000000m };
+            var hasPassed = fraudRiskLimitRule.ExecuteRule(serviceCommand);
 
             Assert.IsFalse(hasPassed);
         }
     }
 
-    public class FraudRiskLimitRule
-    {
-        public bool ExecuteRule(decimal amount)
-        {
-            var fraudRiskLimit = 10000m;
-            var hasPassed      = amount <= fraudRiskLimit; 
-            
-            return hasPassed;
-        }
-    }
+
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Rules;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +10,19 @@ namespace Domain
 {
     public class IdealService : IService
     {
+        private IList<IRule> rules;
+
+        public IdealService(IRule[] rules)
+        {
+            this.rules = rules;
+        }
+
         public decimal CalculateAmount(ServiceCommand serviceCommand)
         {
-            //if (AGE < 20)
-            //    return TO YOUNG
-
-            //if amount is > 10000
-            //    Send it To risk
-
-            //if amount > 5000
-            //    uplift 1%
+            foreach (IRule rule in this.rules)
+            {
+                var hasPassed = rule.ExecuteRule( serviceCommand );
+            }
 
             return serviceCommand.Amount * 0.7m;
         }

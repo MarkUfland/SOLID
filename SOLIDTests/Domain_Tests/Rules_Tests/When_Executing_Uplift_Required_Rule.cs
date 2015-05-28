@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Domain.Rules;
+using Domain;
 
 namespace SOLIDTests.Domain_Tests.Rules_Tests
 {
@@ -10,7 +12,8 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void Then_Uplift_Required_Rule_Passed()
         {
             var upliftRequiredRule = new UpliftRequiredRule();
-            var hasPassed          = upliftRequiredRule.ExecuteRule( 5001m );
+            var serviceCommand = new ServiceCommand() { Amount = 5001m };
+            var hasPassed = upliftRequiredRule.ExecuteRule(serviceCommand);
 
             Assert.IsTrue(hasPassed);
         }
@@ -19,21 +22,12 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void Then_Uplift_Required_Rule_Failed()
         {
             var upliftRequiredRule = new UpliftRequiredRule();
-            var hasPassed          = upliftRequiredRule.ExecuteRule( 5000m );
+            var serviceCommand = new ServiceCommand() { Amount = 5000m };
+            var hasPassed = upliftRequiredRule.ExecuteRule(serviceCommand);
 
             Assert.IsFalse(hasPassed);
         }
     }
 
-    public class UpliftRequiredRule
-    {
-        public bool ExecuteRule(decimal amount)
-        {
-            var upliftRequiredLevel = 5000m;
-            var hasPassed           = amount > upliftRequiredLevel; 
-            
-            return hasPassed;
-        }
-    }
 }
 

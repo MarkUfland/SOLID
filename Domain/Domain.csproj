@@ -43,8 +43,11 @@
     <Compile Include="IdealService.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IServiceFactory.cs" />
+    <Compile Include="Rules\FraudRiskLimitRule.cs" />
+    <Compile Include="Rules\IRule.cs" />
+    <Compile Include="Rules\LegalAgeRule.cs" />
+    <Compile Include="Rules\UpliftRequiredRule.cs" />
     <Compile Include="ServiceCommand.cs" />
-    <Compile Include="ServiceFactory.cs" />
     <Compile Include="SIDService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
