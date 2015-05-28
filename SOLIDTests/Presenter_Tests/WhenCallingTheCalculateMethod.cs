@@ -28,29 +28,31 @@ namespace SOLIDTests.Presenter_Tests
             Assert.AreEqual( solidVM.Amount, fakeTransferService.ServiceCommand.Amount );
         }
 
-        //[TestMethod]
-        //public void Then_The_ServiceCommand_Object_Is_Correctly_Mapped2()
-        //{
-        //    var mocker = new AutoMocker();
+        [TestMethod]
+        public void Then_The_ServiceCommand_Object_Is_Correctly_Mapped2()
+        {
+            var mocker = new AutoMocker();
 
-        //    mocker.Use<IDataContext>(o => o.GetById<FXData>(It.IsAny<object>()) == new FXData());
-        //    mocker.Use<IService>(o =>o.CalculateAmount(It.IsAny<decimal>()) == 10.0m);
+            mocker.Use<IDataContext>(o => o.GetById<FXData>(It.IsAny<object>()) == new FXData());
             
-        //    var serv = mocker.GetMock<IService>();
+            var serv = mocker.GetMock<IService>();
 
-        //    mocker.Use<IServiceFactory>(o => o.GetService(It.IsAny<string>()) == serv.Object);
+            mocker.Use<IServiceFactory>(o => o.GetService(It.IsAny<string>()) == serv.Object);
 
-        //    var mockTransferService = mocker.CreateInstance<TransferService>();
-        //    var solidPresenter      = new SOLIDPresenter( mockTransferService );
-        //    var fixture             = new Fixture();
-        //    var solidVM             = fixture.Create<SOLIDVM>();
-        //    var mockView            = mocker.GetMock<ISOLIDView>();
+            var mockTransferService = new Mock<ITransferService>();
+            mockTransferService.Setup( x => x.GetAmount( It.IsAny<ServiceCommand>()));
 
-        //    solidPresenter.Initialise( mockView.Object );
-        //    solidPresenter.CalculateTransfer( solidVM );
+            var solidPresenter      = new SOLIDPresenter( mockTransferService.Object );
+            var fixture             = new Fixture();
+            var solidVM             = fixture.Create<SOLIDVM>();
+            var mockView            = mocker.GetMock<ISOLIDView>();
+            var serviceCommand      = fixture.Create<ServiceCommand>();
+            
+            solidPresenter.Initialise( mockView.Object );
+            solidPresenter.CalculateTransfer( solidVM );
 
-        //    Assert.AreEqual( solidVM.Amount, mockTransferService.ServiceCommand.Amount );
-        //}
+            mockTransferService.Verify( x => x.GetAmount( It.Is<ServiceCommand>( fn=>fn.Amount == solidVM.Amount )));
+        }
     }
 
     class FakeTransferService : ITransferService
