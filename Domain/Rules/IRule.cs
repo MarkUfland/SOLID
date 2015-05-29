@@ -3,6 +3,6 @@ namespace Domain.Rules
 {
     public interface IRule
     {
-        bool ExecuteRule(Domain.ServiceCommand serviceCommand);
+        bool ExecuteRule(ServiceCommand serviceCommand);
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="Rules\FraudRiskLimitRule.cs" />
     <Compile Include="Rules\IRule.cs" />
     <Compile Include="Rules\LegalAgeRule.cs" />
+    <Compile Include="Rules\RuleResult.cs" />
     <Compile Include="Rules\UpliftRequiredRule.cs" />
     <Compile Include="ServiceCommand.cs" />
     <Compile Include="SIDService.cs" />
