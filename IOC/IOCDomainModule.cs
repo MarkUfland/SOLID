@@ -9,6 +9,7 @@ using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Factory;
 using Ninject.Extensions.Factory.Factory;
 using Domain.Rules;
+using Domain.IdealRules;
 
 namespace IOC
 {
@@ -19,9 +20,10 @@ namespace IOC
             Bind<IService>().To<SIDService>().Named("SID");
             Bind<IService>().To<IdealService>().Named("Ideal");
 
-            Bind<IRule>().To<FraudRiskLimitRule>();
-            Bind<IRule>().To<LegalAgeRule>();
-            Bind<IRule>().To<UpliftRequiredRule>();
+            Bind<IIdealServiceRule>().To<IdealLegalAgeRule>();
+            //Bind<IRule,IIdealServiceRule>().To<FraudRiskLimitRule>();
+            //Bind<IRule,ISIDServiceRule,IIdealServiceRule>().To<LegalAgeRule>();
+            //Bind<IRule,ISIDServiceRule,IIdealServiceRule>().To<UpliftRequiredRule>();
 
             Bind<IServiceFactory>().ToFactory(() => new NameInstanceProvider(Kernel));
 

@@ -13,9 +13,9 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             var legalAgeRule = new LegalAgeRule();
             var serviceCommand = new ServiceCommand() { Age = 20 };
-            var hasPassed = legalAgeRule.ExecuteRule(serviceCommand );
+            var ruleResult = legalAgeRule.ExecuteRule(serviceCommand);
 
-            Assert.IsTrue(hasPassed);
+            Assert.IsTrue(ruleResult.HasPassed);
         }
 
         [TestMethod]
@@ -23,9 +23,9 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             var legalAgeRule = new LegalAgeRule();
             var serviceCommand = new ServiceCommand() { Age = 19 };
-            var hasPassed = legalAgeRule.ExecuteRule(serviceCommand);
+            var ruleResult = legalAgeRule.ExecuteRule(serviceCommand);
 
-            Assert.IsFalse(hasPassed);
+            Assert.IsFalse(ruleResult.HasPassed);
         }
     }
 

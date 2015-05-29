@@ -13,9 +13,9 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             var fraudRiskLimitRule = new FraudRiskLimitRule();
             var serviceCommand = new ServiceCommand() { Amount = 1000m };
-            var hasPassed = fraudRiskLimitRule.ExecuteRule( serviceCommand );
-          
-            Assert.IsTrue(hasPassed);
+            var ruleResult = fraudRiskLimitRule.ExecuteRule( serviceCommand );
+
+            Assert.IsTrue(ruleResult.HasPassed);
         }
 
         [TestMethod]
@@ -23,9 +23,9 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             var fraudRiskLimitRule = new FraudRiskLimitRule();
             var serviceCommand = new ServiceCommand() { Amount = 1000000m };
-            var hasPassed = fraudRiskLimitRule.ExecuteRule(serviceCommand);
+            var ruleResult = fraudRiskLimitRule.ExecuteRule(serviceCommand);
 
-            Assert.IsFalse(hasPassed);
+            Assert.IsFalse(ruleResult.HasPassed);
         }
     }
 

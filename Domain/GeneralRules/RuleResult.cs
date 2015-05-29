@@ -8,7 +8,7 @@ namespace Domain.Rules
 {
     public class RuleResult
     {
-        public bool Status { get; set; }
+        public bool HasPassed { get; set; }
         public string Description { get; set; }
     }
 }

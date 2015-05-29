@@ -13,9 +13,9 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             var upliftRequiredRule = new UpliftRequiredRule();
             var serviceCommand = new ServiceCommand() { Amount = 5001m };
-            var hasPassed = upliftRequiredRule.ExecuteRule(serviceCommand);
+            var ruleResult = upliftRequiredRule.ExecuteRule(serviceCommand);
 
-            Assert.IsTrue(hasPassed);
+            Assert.IsTrue(ruleResult.HasPassed);
         }
 
         [TestMethod]
@@ -23,9 +23,9 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             var upliftRequiredRule = new UpliftRequiredRule();
             var serviceCommand = new ServiceCommand() { Amount = 5000m };
-            var hasPassed = upliftRequiredRule.ExecuteRule(serviceCommand);
+            var ruleResult = upliftRequiredRule.ExecuteRule(serviceCommand);
 
-            Assert.IsFalse(hasPassed);
+            Assert.IsFalse(ruleResult.HasPassed);
         }
     }
 
