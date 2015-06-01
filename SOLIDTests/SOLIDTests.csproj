@@ -61,8 +61,9 @@
   <ItemGroup>
     <Compile Include="Data_Tests\UnitTest1.cs" />
     <Compile Include="Domain_Tests\IdealService_Tests\When_Calling_Calculate_Transfer_Method_On_Ideal_Class.cs" />
+    <Compile Include="Domain_Tests\Rules_Tests\UnitTest1.cs" />
     <Compile Include="Domain_Tests\Rules_Tests\When_Executing_Uplift_Required_Rule.cs" />
-    <Compile Include="Domain_Tests\Rules_Tests\When_Executing_Legal_Age_Rule.cs" />
+    <Compile Include="Domain_Tests\Rules_Tests\When_Executing_Ideal_Legal_Age_Rule.cs" />
     <Compile Include="Domain_Tests\Rules_Tests\When_Executing_Fraud_Risk_Limit_Rule.cs" />
     <Compile Include="Domain_Tests\SIDService_Tests\When_Calling_Calculate_Transfer_Method_On_SID_Class.cs" />
     <Compile Include="Logging_Tests\When_a_Message_Is_Logged.cs" />
