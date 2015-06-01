@@ -1,4 +1,5 @@
-﻿using Domain.Rules;
+﻿using Domain.GeneralRules;
+using Domain.Rules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
