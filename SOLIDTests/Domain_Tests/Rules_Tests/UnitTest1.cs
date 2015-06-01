@@ -51,8 +51,8 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         }
     }
 
-    public class IRulesBuilder
+    public interface IRulesBuilder
     {
-        public IList<IRule> PrioritiseRules();
+        IList<IRule> PrioritiseRules();
     }
 }
