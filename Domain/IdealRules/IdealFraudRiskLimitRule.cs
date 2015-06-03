@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Domain.IdealRules
 {
-    public class IdealLegalAgeRule : LegalAgeRule, IIdealServiceRule
+    public class IdealFraudRiskLimitRule : FraudRiskLimitRule, IIdealServiceRule
     {
-        private const int AgeLimit = 20;
+        private const int FraudRiskLimit = 10000;
 
-        public IdealLegalAgeRule() : base( age: AgeLimit )
+        public IdealFraudRiskLimitRule() : base( limit: FraudRiskLimit)
         {
 
         }
@@ -21,9 +21,10 @@ namespace Domain.IdealRules
         {
             var ruleResult = base.ExecuteRule(serviceCommand);
 
-            ruleResult.RuleType = RuleType.IdealLegalLAgeRule;
+            ruleResult.RuleType = RuleType.IdealFraudRiskLimitRule;
 
             return ruleResult;
         }
+
     }
 }

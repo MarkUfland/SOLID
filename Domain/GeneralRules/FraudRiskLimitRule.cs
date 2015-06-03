@@ -8,7 +8,14 @@ namespace Domain.Rules
 {
     public class FraudRiskLimitRule : IRule, IIdealServiceRule
     {
-        public RuleResult ExecuteRule(ServiceCommand serviceCommand)
+        private decimal limit;
+ 
+        public FraudRiskLimitRule(decimal limit)
+        {
+            this.limit = limit;
+        }
+
+        public virtual RuleResult ExecuteRule(ServiceCommand serviceCommand)
         {
             var fraudRiskLimit = 10000m;
             var ruleResult = new RuleResult() { HasPassed = serviceCommand.Amount <= fraudRiskLimit };

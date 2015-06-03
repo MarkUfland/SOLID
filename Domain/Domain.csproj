@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="FXData.cs" />
     <Compile Include="GeneralRules\LegalAgeRule.cs" />
+    <Compile Include="IdealRules\IdealFraudRiskLimitRule.cs" />
     <Compile Include="IdealRules\IdealLegalAgeRule.cs" />
     <Compile Include="IdealService.cs" />
     <Compile Include="IService.cs" />

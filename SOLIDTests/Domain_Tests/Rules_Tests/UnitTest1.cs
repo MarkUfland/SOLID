@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Domain.Rules;
 using Domain.IdealRules;
+using Domain;
 
 namespace SOLIDTests.Domain_Tests.Rules_Tests
 {
@@ -27,14 +28,16 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         {
             this.idealRules = new List<IIdealServiceRule>();
 
-            this.idealRules.Add(new IdealLegalAgeRule());
+            
 
             
         }
 
         public IList<IRule> PrioritiseRules()
         {
-            return null;
+            this.idealRules.Add(new IdealLegalAgeRule());
+
+            return idealRules as IList<IRule>;
         }
     }
 
@@ -49,10 +52,18 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
             this.rulesBuilder = rulesBuilder;
             this.rules = rulesBuilder.PrioritiseRules();
         }
+
+        public void RunRules(ServiceCommand serviceCommand)
+        {
+            foreach (IRule rule in rules)
+            {
+              RuleResult ruleResult = rule.ExecuteRule(serviceCommand);
+            }
+        }
     }
 
-    public class IRulesBuilder
+    public interface IRulesBuilder
     {
-        public IList<IRule> PrioritiseRules();
+        IList<IRule> PrioritiseRules();
     }
 }

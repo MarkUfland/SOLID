@@ -11,7 +11,7 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         [TestMethod]
         public void Then_Fraud_Risk_Limit_Rule_Passed()
         {
-            var fraudRiskLimitRule = new FraudRiskLimitRule();
+            var fraudRiskLimitRule = new FraudRiskLimitRule( 10000m );
             var serviceCommand = new ServiceCommand() { Amount = 1000m };
             var ruleResult = fraudRiskLimitRule.ExecuteRule( serviceCommand );
 
@@ -21,7 +21,7 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         [TestMethod]
         public void Then_Fraud_Risk_Limit_Rule_Failed()
         {
-            var fraudRiskLimitRule = new FraudRiskLimitRule();
+            var fraudRiskLimitRule = new FraudRiskLimitRule( 10000m );
             var serviceCommand = new ServiceCommand() { Amount = 1000000m };
             var ruleResult = fraudRiskLimitRule.ExecuteRule(serviceCommand);
 

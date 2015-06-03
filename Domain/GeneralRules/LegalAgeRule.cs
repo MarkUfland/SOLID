@@ -16,7 +16,7 @@ namespace Domain.GeneralRules
             Age = age;
         }
 
-        public RuleResult ExecuteRule(ServiceCommand serviceCommand)
+        public virtual RuleResult ExecuteRule(ServiceCommand serviceCommand)
         {
             var ruleResult = new RuleResult() { HasPassed = serviceCommand.Age >= Age };
 
