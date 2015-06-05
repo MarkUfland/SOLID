@@ -10,23 +10,21 @@ namespace Domain
 {
     public class IdealService : IService
     {
-        private IList<IIdealServiceRule> rules;
+        private IRulesProcessor rulesProcessor;
+        private IRulesBuilderFactory rulesBuilderFactory;
 
-        public IdealService(IIdealServiceRule[] rules)
+        public IdealService(IRulesProcessor rulesProcessor, IRulesBuilderFactory rulesBuilderFactory)
         {
-            this.rules = rules;
+            this.rulesProcessor = rulesProcessor;
+            this.rulesBuilderFactory = rulesBuilderFactory;
         }
 
         public decimal CalculateAmount(ServiceCommand serviceCommand)
         {
-            var ruleResults = new List<RuleResult>();
+            var rulesBuilder = this.rulesBuilderFactory.GetRulesBuilder("Ideal");
 
-            foreach (IRule rule in this.rules)
-            {
-                var ruleResult = rule.ExecuteRule( serviceCommand );
-                
-                ruleResults.Add(ruleResult);
-            }
+            this.rulesProcessor.RulesProcessorSetup(rulesBuilder);
+            this.rulesProcessor.RunRules(serviceCommand);
 
             return serviceCommand.Amount * 0.7m;
         }

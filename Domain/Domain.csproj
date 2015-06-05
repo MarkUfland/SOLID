@@ -41,14 +41,19 @@
   <ItemGroup>
     <Compile Include="FXData.cs" />
     <Compile Include="GeneralRules\LegalAgeRule.cs" />
+    <Compile Include="IdealRules\IdealRulesBuilder.cs" />
     <Compile Include="IdealRules\IdealFraudRiskLimitRule.cs" />
     <Compile Include="IdealRules\IdealLegalAgeRule.cs" />
     <Compile Include="IdealService.cs" />
+    <Compile Include="IRulesBuilder.cs" />
+    <Compile Include="IRulesBuilderFactory.cs" />
+    <Compile Include="IRulesProcessor.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IServiceFactory.cs" />
     <Compile Include="GeneralRules\FraudRiskLimitRule.cs" />
     <Compile Include="IdealRules\IIdealServiceRule.cs" />
     <Compile Include="GeneralRules\IRule.cs" />
+    <Compile Include="RulesProcessor.cs" />
     <Compile Include="SIDRules\ISIDServiceRule.cs" />
     <Compile Include="GeneralRules\RuleResult.cs" />
     <Compile Include="GeneralRules\UpliftRequiredRule.cs" />
