@@ -15,7 +15,7 @@ namespace SOLIDTests.Domain_Tests.Rules_Tests
         public void TestMethod1()
         {
             var rulesBuilder = new IdealRulesBuilder();
-            var rulesProcessor = new RulesProcessor(rulesBuilder);
+            var rulesProcessor = new RulesProcessor();
 
         }
     }

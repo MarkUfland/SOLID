@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Domain
 {
-    interface IRulesProcessor
+    public interface IRulesProcessor
     {
         void RulesProcessorSetup(IRulesBuilder rulesBuilder);
 
