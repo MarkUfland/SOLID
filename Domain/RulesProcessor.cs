@@ -19,15 +19,20 @@ namespace Domain
         public void RulesProcessorSetup(IRulesBuilder rulesBuilder)
         {
             this.rulesBuilder = rulesBuilder;
-            this.rulesBuilder.PrioritiseRules();
+            rules = this.rulesBuilder.PrioritiseRules();
         }
 
-        public void RunRules(ServiceCommand serviceCommand)
+        public IList<RuleResult> RunRules(ServiceCommand serviceCommand)
         {
+            var ruleResults = new List<RuleResult>();
+
             foreach (IRule rule in rules)
             {
                 RuleResult ruleResult = rule.ExecuteRule(serviceCommand);
+                ruleResults.Add( ruleResult );
             }
+
+            return ruleResults;
         }
     }
 

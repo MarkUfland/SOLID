@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Domain.Rules;
+using System;
+using System.Collections.Generic;
 namespace Domain
 {
     public interface IRulesProcessor
     {
         void RulesProcessorSetup(IRulesBuilder rulesBuilder);
 
-        void RunRules(ServiceCommand serviceCommand);
+        IList<RuleResult> RunRules(ServiceCommand serviceCommand);
     }
 }

@@ -41,6 +41,9 @@
     <Reference Include="Moq.AutoMock">
       <HintPath>..\packages\Moq.AutoMock.0.3.2.1\lib\net40\Moq.AutoMock.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="Ploeh.AutoFixture">
       <HintPath>..\packages\AutoFixture.3.30.5\lib\net40\Ploeh.AutoFixture.dll</HintPath>
     </Reference>
@@ -83,6 +86,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{c81c875d-4091-4d61-8c83-9dbd1332ef3f}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IOC\IOC.csproj">
+      <Project>{f5c53bf5-ea8c-41af-a7c3-deede22fa0a0}</Project>
+      <Name>IOC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logging\Logging.csproj">
       <Project>{a5566333-caba-487d-93b9-fe4b9ed2e71a}</Project>

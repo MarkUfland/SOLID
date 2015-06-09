@@ -20,8 +20,9 @@ namespace Domain.IdealRules
         public IList<IRule> PrioritiseRules()
         {
             this.idealRules.Add(new IdealLegalAgeRule());
+            this.idealRules.Add(new IdealFraudRiskLimitRule());
 
-            return idealRules as IList<IRule>;
+            return idealRules.Cast<IRule>().ToList();
         }
     }
 

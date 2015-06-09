@@ -21,6 +21,7 @@ namespace IOC
             Bind<IService>().To<IdealService>().Named("Ideal");
 
             Bind<IIdealServiceRule>().To<IdealLegalAgeRule>();
+            Bind<IIdealServiceRule>().To<FraudRiskLimitRule>();
             //Bind<IRule,IIdealServiceRule>().To<FraudRiskLimitRule>();
             //Bind<IRule,ISIDServiceRule,IIdealServiceRule>().To<LegalAgeRule>();
             //Bind<IRule,ISIDServiceRule,IIdealServiceRule>().To<UpliftRequiredRule>();
